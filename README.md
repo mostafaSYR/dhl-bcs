@@ -10,16 +10,13 @@ The DHL BCS API is just for standard parcels. If you are looking for shipping of
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dhl-bcs'
+gem 'dhl-bcs', git: "ssh://git@bitbucket.hencke.de::7999/gem/dhl-bcs.git"
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install dhl-bcs
 
 ## Usage
 
