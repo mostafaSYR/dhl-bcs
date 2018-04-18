@@ -14,7 +14,7 @@ module Dhl::Bcs::V2
         permit_number: '1234',
         attestation_number: '12345678',
         with_electronic_export_notification: true,
-        array_of_export_doc_positions: [
+        export_doc_positions: [
           { description: 'ExportPositionOne',
             country_code_origin: 'CN',
             customs_tariff_number: '12345678',

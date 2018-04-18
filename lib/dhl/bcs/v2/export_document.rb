@@ -27,7 +27,7 @@ module Dhl::Bcs::V2
     end
     def terms_of_trade=(terms_of_trade)
       raise Dhl::Bcs::Error, "No Valid terms_of_trade #{terms_of_trade}, Please use one of these: #{TERMS_OF_TRADES.join(',')}" unless TERMS_OF_TRADES.include?(terms_of_trade)
-      @export_type = export_type
+      @terms_of_trade = terms_of_trade
     end
 
 

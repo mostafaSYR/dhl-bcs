@@ -82,11 +82,10 @@
               <netWeightInKG>0.4</netWeightInKG>
               <customsValue>99.90</customsValue>
             </ExportDocPosition>
-          </ExportDocPosition>
-        </ExportDocument>
-      </Shipment>
-      <LabelResponseType>URL</LabelResponseType>
-    </ShipmentOrder>
-  </bcs:CreateShipmentOrderRequest>
-</env:Body>
+          </ExportDocument>
+        </Shipment>
+        <LabelResponseType>URL</LabelResponseType>
+      </ShipmentOrder>
+    </bcs:CreateShipmentOrderRequest>
+  </env:Body>
 </env:Envelope>
