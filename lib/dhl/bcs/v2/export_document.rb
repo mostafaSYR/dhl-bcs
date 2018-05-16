@@ -10,6 +10,7 @@ module Dhl::Bcs::V2
 
     def self.build(export_doc_positions=[],**attributes)
       array_of_export_doc_positions = []
+      byebug
       export_doc_positions.each do |export_doc_position|
         array_of_export_doc_positions << ExportDocPosition.build(export_doc_position) if export_doc_position.is_a?(Hash)
       end

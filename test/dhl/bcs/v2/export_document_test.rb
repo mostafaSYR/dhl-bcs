@@ -4,17 +4,8 @@ module Dhl::Bcs::V2
   class ExportDocumentTest < Minitest::Test
 
     def test_build_export_document
-      export_document = ExportDocument.build({
-        invoice_number: '12345678',
-        export_type: 'OTHER',
-        export_type_description: 'Permanent',
-        terms_of_trade: 'DDP',
-        place_of_commital: 'Bonn',
-        additional_fee: '1',
-        permit_number: '1234',
-        attestation_number: '12345678',
-        with_electronic_export_notification: true,
-        export_doc_positions: [
+      export_document = ExportDocument.build(
+       [
           { description: 'ExportPositionOne',
             country_code_origin: 'CN',
             customs_tariff_number: '12345678',
@@ -27,7 +18,18 @@ module Dhl::Bcs::V2
               amount: '1',
               net_weight_in_kg: '0.4',
               customs_value: '99.90'}        
-        ]})
+        ],
+        
+        invoice_number: '12345678',
+        export_type: 'OTHER',
+        export_type_description: 'Permanent',
+        terms_of_trade: 'DDP',
+        place_of_commital: 'Bonn',
+        additional_fee: '1',
+        permit_number: '1234',
+        attestation_number: '12345678',
+        with_electronic_export_notification: true
+       )
       assert_equal '12345678', export_document.invoice_number
       assert_equal 'OTHER', export_document.export_type
       assert_equal 'Permanent', export_document.export_type_description
