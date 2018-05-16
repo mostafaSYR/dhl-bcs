@@ -4,7 +4,7 @@ module Dhl::Bcs::V2
   class ExportDocumentTest < Minitest::Test
 
     def test_build_export_document
-      export_document = ExportDocument.build(
+      export_document = ExportDocument.build({
         invoice_number: '12345678',
         export_type: 'OTHER',
         export_type_description: 'Permanent',
@@ -27,7 +27,7 @@ module Dhl::Bcs::V2
               amount: '1',
               net_weight_in_kg: '0.4',
               customs_value: '99.90'}        
-        ])
+        ]})
       assert_equal '12345678', export_document.invoice_number
       assert_equal 'OTHER', export_document.export_type
       assert_equal 'Permanent', export_document.export_type_description

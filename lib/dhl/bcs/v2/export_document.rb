@@ -7,7 +7,7 @@ module Dhl::Bcs::V2
     EXPORT_TYPES = ['OTHER','PRESENT','COMMERCIAL_SAMPLE','DOCUMENT','RETURN_OF_GOODS'].freeze
     TERMS_OF_TRADES = ['DDP','DXV','DDU','DDX'].freeze
 
-    def self.build(export_doc_positions:,**attributes)
+    def self.build(export_doc_positions,**attributes)
       array_of_export_doc_positions = []
       export_doc_positions.each do |export_doc_position|
         array_of_export_doc_positions << ExportDocPosition.build(export_doc_position) if export_doc_position.is_a?(Hash)
@@ -32,6 +32,7 @@ module Dhl::Bcs::V2
 
 
     def to_soap_hash
+      raise Dhl::Bcs::Error, "export_type_desription must be set, as export_type is set to OTHER" unless export_doc_positions
       raise Dhl::Bcs::Error, "export_type_desription must be set, as export_type is set to OTHER" unless !((export_type == 'OTHER') ^ export_type_description)
       raise Dhl::Bcs::Error, "place_of_commital must be set" unless place_of_commital
       h =
