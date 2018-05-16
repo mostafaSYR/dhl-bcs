@@ -19,7 +19,7 @@ module Dhl::Bcs::V2
               net_weight_in_kg: '0.4',
               customs_value: '99.90'}        
         ],
-        
+        {
         invoice_number: '12345678',
         export_type: 'OTHER',
         export_type_description: 'Permanent',
@@ -29,6 +29,7 @@ module Dhl::Bcs::V2
         permit_number: '1234',
         attestation_number: '12345678',
         with_electronic_export_notification: true
+        }
        )
       assert_equal '12345678', export_document.invoice_number
       assert_equal 'OTHER', export_document.export_type
