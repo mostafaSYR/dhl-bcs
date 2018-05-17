@@ -31,6 +31,7 @@ module Dhl::Bcs::V2
         with_electronic_export_notification: true
         }
        )
+
       assert_equal '12345678', export_document.invoice_number
       assert_equal 'OTHER', export_document.export_type
       assert_equal 'Permanent', export_document.export_type_description
